@@ -137,13 +137,43 @@ for rapper in rappers:
     print(rapper,  "is goated")
 
 
-def finder(name, city="Honolulu", shop):
+def finder(name, city="Honolulu", shop="CVS"):
     if name == "Masa":
         print(f"Hey thats {name}!")
     elif city == "Honolulu":
-        print(name, "is from {}")
+        print(name, "is from", city)
     elif shop == "Gamestop":
-        print("{} frequents {} all the time in {}".format(name, city, shop))
+        print("{} frequents {} all the time in {}".format(name, shop, city))
 
 
 finder("Masa", "Honolulu", "Gamestop")
+finder("Marina", "Honolulu", "Gamestop")
+finder("Marina", "Kaneohe", "Gamestop")
+
+students = [
+    {
+        "name": "Kimmie",
+        "city": "Atlanta"
+    },
+    {
+        "name": "Chris",
+        "city": "Salt Lake City"
+    },
+    {
+        "name": "Zack",
+        "city": "Los Angeles"
+    }
+]
+
+
+def get_names(students):
+
+    names = []
+    for k in students:
+        if k.get('name'):
+            names.append(k.get('name'))
+
+    return names
+
+
+print("Students list: ", get_names(students))
