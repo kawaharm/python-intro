@@ -177,3 +177,75 @@ def get_names(students):
 
 
 print("Students list: ", get_names(students))
+
+students2 = [
+    {
+        "name": "Kimmie",
+        "city": "Atlanta"
+    },
+    {
+        "name": "Chris",
+        "city": "Salt Lake City"
+    },
+    {
+        "name": "Zack",
+        "city": "Los Angeles"
+    },
+    {
+        "name": "John",
+        "city": "Atlanta"
+    },
+    {
+        "name": "Jane",
+        "city": "New York"
+    },
+    {
+        "name": "Rob",
+        "city": "Los Angeles"
+    },
+    {
+        "name": "Harper",
+        "city": "Washington"
+    },
+    {
+        "name": "Mike",
+        "city": "Seattle"
+    },
+    {
+        "name": "Set",
+        "city": "San Francisco"
+    },
+]
+
+
+def pars_by_cities(students):
+    ''' Return a dictionary with key for each city '''
+    ''' and a list of students for each city '''
+    # TODO Make an empty dict
+    # TODO Iterate thru students array
+    # logic -> if city is not in dict
+    # add city to empty list
+    # -> if city is in dict
+    # append student name to list
+    # TODO return the dict
+
+    dict = {}
+    for i in students:
+        print('PRINT INSIDE ', i)
+        if i.get('city'):   # check if city is in index
+            if not dict.get(i.get('city')):  # check if city is not in dict
+                print('does not exist')
+                dict[i.get('city')] = []    # create new array for city
+                city_list = dict[i.get('city')]    # []
+                print('CITY LIST BEFORE ', city_list)
+                city_list.append(i.get('name'))  # add student to array
+                print('CITY LIST AFTER ', city_list)
+            else:
+                print('does exist')
+                city_list = dict[i.get('city')]  # [exist student]
+                city_list.append(i.get('name'))  # [exist student, new student]
+
+    return dict
+
+
+print('PRINTING OUTSIDE ', pars_by_cities(students2))
